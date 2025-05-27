@@ -1,2 +1,3 @@
-2025/05/27-17:10:48.939 6320 Creating DB C:\Java_Training\ExpenseManagement\EMS\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata since it was missing.
-2025/05/27-17:10:48.960 6320 Reusing MANIFEST C:\Java_Training\ExpenseManagement\EMS\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata/MANIFEST-000001
+2025/05/27-17:33:07.229 1e5c Reusing MANIFEST C:\Java_Training\ExpenseManagement\EMS\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata/MANIFEST-000001
+2025/05/27-17:33:07.229 1e5c Recovering log #3
+2025/05/27-17:33:07.230 1e5c Reusing old log C:\Java_Training\ExpenseManagement\EMS\.metadata\.plugins\org.eclipse.swt\EBWebView\Default\shared_proto_db\metadata/000003.log 
