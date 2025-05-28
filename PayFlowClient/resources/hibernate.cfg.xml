@@ -4,19 +4,21 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-    <session-factory>
-        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/expenseinfinite</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">root</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/expenseinfinite</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-        <!-- Disable bean validation if causing issues -->
+		<!-- Disable bean validation if causing issues -->
 
-        <!-- Reference your mapping resource relative to the classpath -->
-        <mapping resource="com/java/jsf/mapping/User.hbm.xml"/>
-        
-        
+		<!-- Reference your mapping resource relative to the classpath -->
+		<mapping resource="com/java/jsf/mapping/User.hbm.xml" />
+		<mapping resource="com/java/jsf/mapping/Group.hbm.xml" />
 
-    </session-factory>
+
+
+
+	</session-factory>
 </hibernate-configuration>
