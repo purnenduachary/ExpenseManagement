@@ -16,6 +16,7 @@
 		<!-- Reference your mapping resource relative to the classpath -->
 		<mapping resource="com/java/jsf/mapping/User.hbm.xml" />
 		<mapping resource="com/java/jsf/mapping/Group.hbm.xml" />
+		<mapping resource="com/java/jsf/mapping/GroupMember.hbm.xml" />
 
 
 

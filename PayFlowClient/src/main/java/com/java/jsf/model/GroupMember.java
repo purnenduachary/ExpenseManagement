@@ -2,14 +2,15 @@ package com.java.jsf.model;
 
 
 public class GroupMember {
+	
     private int id;
     private Group group;
     private User user;
-    private java.util.Date joinedAt;
+    private java.sql.Timestamp joinedAt;
 
     public GroupMember() {}
 
-    public GroupMember(int id, Group group, User user, java.util.Date joinedAt) {
+    public GroupMember(int id, Group group, User user, java.sql.Timestamp joinedAt) {
         this.id = id;
         this.group = group;
         this.user = user;
@@ -26,5 +27,5 @@ public class GroupMember {
     public void setUser(User user) { this.user = user; }
 
     public java.util.Date getJoinedAt() { return joinedAt; }
-    public void setJoinedAt(java.util.Date joinedAt) { this.joinedAt = joinedAt; }
+    public void setJoinedAt(java.sql.Timestamp joinedAt) { this.joinedAt = joinedAt; }
 }
