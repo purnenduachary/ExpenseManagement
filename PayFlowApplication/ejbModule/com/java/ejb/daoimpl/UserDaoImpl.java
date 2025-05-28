@@ -19,7 +19,7 @@ public class UserDaoImpl implements UserDao {
 	Connection con;
 
     @Override
-    public int addUser(User user) throws SQLException, ClassNotFoundException {
+    public void addUser(User user) throws SQLException, ClassNotFoundException {
         Connection con = ConnectionHelper.getConnection();
         String sql = "INSERT INTO users (name, email, created_at) VALUES (?, ?, ?)";
         PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -31,7 +31,7 @@ public class UserDaoImpl implements UserDao {
         if (rows > 0) {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
-                return rs.getInt(1); // Return generated user ID
+                return; // Return generated user ID
             }
         }
         return 0;
@@ -73,4 +73,10 @@ public class UserDaoImpl implements UserDao {
         }
         return users;
     }
+
+	@Override
+	public User getUserByEmail(String email) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

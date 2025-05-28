@@ -6,20 +6,17 @@ import com.java.ejb.model.User;
 
 public interface UserDao {
 	
-<<<<<<< HEAD
     void addUser(User user) throws SQLException;
     
-    User getUserById(int id) throws SQLException;
+    User getUserById(int id) throws SQLException, ClassNotFoundException;
     
     User getUserByEmail(String email) throws SQLException;
     
-    List<User> getAllUsers() throws SQLException;
+    List<User> getAllUsers() throws SQLException, ClassNotFoundException;
     
-=======
-	int addUser(User user) throws ClassNotFoundException, SQLException;
+//	int addUser(User user) throws ClassNotFoundException, SQLException;
+//
+//	User getUserById(int id) throws ClassNotFoundException, SQLException;
 
-	User getUserById(int id) throws ClassNotFoundException, SQLException;
 
-	List<User> getAllUsers() throws ClassNotFoundException, SQLException;
->>>>>>> 984bcc27eafc4cb03d1c6dc166083946130e82ea
 }
