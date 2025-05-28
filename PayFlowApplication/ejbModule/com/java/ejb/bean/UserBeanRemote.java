@@ -7,19 +7,11 @@ import javax.ejb.Remote;
 
 import com.java.ejb.model.User;
 
-import java.sql.SQLException;
-
 @Remote
 public interface UserBeanRemote {
-<<<<<<< HEAD
-    List<User> showUsers() throws ClassNotFoundException, SQLException, SQLException;
-    User searchUser(int userId) throws ClassNotFoundException, SQLException;
-    void addUser(User user) throws ClassNotFoundException, SQLException;
-=======
-	List<User> showUsers() throws ClassNotFoundException, SQLException;
+	List<User> showUsers() throws ClassNotFoundException, SQLException, SQLException;
 
 	User searchUser(int userId) throws ClassNotFoundException, SQLException;
 
 	void addUser(User user) throws ClassNotFoundException, SQLException;
->>>>>>> 8dfbebf (Updaetd files)
 }

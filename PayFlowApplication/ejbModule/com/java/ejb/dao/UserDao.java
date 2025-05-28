@@ -5,10 +5,11 @@ import java.util.List;
 
 import com.java.ejb.model.User;
 
-public interface UserDAO {
-    void addUser(User user) throws SQLException;
-    User getUserById(int id) throws SQLException;
-    User getUserByEmail(String email) throws SQLException;
-    List<User> getAllUsers() throws SQLException;
-}
+public interface UserDao {
+	
+	int addUser(User user) throws ClassNotFoundException, SQLException;
 
+	User getUserById(int id) throws ClassNotFoundException, SQLException;
+
+	List<User> getAllUsers() throws ClassNotFoundException, SQLException;
+}
