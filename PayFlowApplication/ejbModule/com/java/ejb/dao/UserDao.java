@@ -5,8 +5,13 @@ import java.util.List;
 import com.java.ejb.model.User;
 
 public interface UserDao {
+	
     void addUser(User user) throws SQLException;
+    
     User getUserById(int id) throws SQLException;
+    
     User getUserByEmail(String email) throws SQLException;
+    
     List<User> getAllUsers() throws SQLException;
+    
 }

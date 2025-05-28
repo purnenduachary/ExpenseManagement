@@ -1,7 +1,10 @@
 package com.java.ejb.test;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
+import com.java.ejb.dao.GroupDao;
+import com.java.ejb.daoimpl.GroupDaoImpl;
 import com.java.ejb.util.ConnectionHelper;
 
 public class TestConnection {
@@ -10,6 +13,7 @@ public class TestConnection {
     	
     	
         try (Connection conn = ConnectionHelper.getConnection()) {
+        	
             if (conn != null && !conn.isClosed()) {
                 System.out.println("Database connection established successfully!");
             } else {
@@ -20,6 +24,20 @@ public class TestConnection {
             System.out.println("Error while connecting to database: " + e.getMessage());
             e.printStackTrace();
         }
+        
+        
+        
+        
+        GroupDao gpdao=new GroupDaoImpl();
+        
+        try {
+			gpdao.showAllGroup().forEach(System.out::println);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+    
     }
 }
 
