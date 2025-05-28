@@ -44,6 +44,13 @@
 
     <dependencies>
     
+    <dependency>
+    <groupId>com.fasterxml</groupId>
+    <artifactId>classmate</artifactId>
+    <version>1.5.1</version>
+</dependency>
+
+    
    <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>

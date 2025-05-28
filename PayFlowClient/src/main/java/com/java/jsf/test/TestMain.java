@@ -13,18 +13,33 @@ public class TestMain {
 		System.out.println("Test for hibernate");
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
+        Transaction tx = null;
 
-        User user = new User();
-        user.setName("John Doe");
-        user.setEmail("john@example.com");
-        user.setCreatedAt(new Date(System.currentTimeMillis()));
+        try {
+            tx = session.beginTransaction();
 
-        session.save(user);
-        tx.commit();
-        session.close();
+            // Create a new User instance
+            User user = new User();
+            user.setId(1);          // assuming ID is int or Integer
+            user.setName("John Doe");
+            user.setEmail("john.doe@example.com");
+            // set other fields if any
 
-        System.out.println("User saved successfully!");
+            // Save the user object
+            session.save(user);
+
+            tx.commit();
+            System.out.println("User saved successfully!");
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        // Close the SessionFactory (optional, usually at app shutdown)
+        HibernateUtil.getSessionFactory().close();
+    }
     }
 		
 	
