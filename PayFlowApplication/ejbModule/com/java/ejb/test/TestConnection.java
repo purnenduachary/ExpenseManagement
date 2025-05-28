@@ -1,12 +1,15 @@
 package com.java.ejb.test;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
+import com.java.ejb.dao.UserDao;
+import com.java.ejb.daoimpl.UserDaoImpl;
 import com.java.ejb.util.ConnectionHelper;
 
 public class TestConnection {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
     	
     	
         try (Connection conn = ConnectionHelper.getConnection()) {
@@ -19,6 +22,17 @@ public class TestConnection {
             System.out.println("Error while connecting to database: " + e.getMessage());
             e.printStackTrace();
         }
+        
+        UserDao userdao = new UserDaoImpl();
+        
+        try {
+			userdao.getAllUsers().forEach(System.out::println);;
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        
     }
 }
 

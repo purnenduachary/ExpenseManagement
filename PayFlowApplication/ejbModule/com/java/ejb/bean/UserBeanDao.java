@@ -17,7 +17,7 @@ public class UserBeanDao implements UserBeanRemote {
     static UserDao dao;
 
     static {
-        dao = new UserDaoImpl(null);
+        dao = new UserDaoImpl();
     }
 
     public UserBeanDao() {

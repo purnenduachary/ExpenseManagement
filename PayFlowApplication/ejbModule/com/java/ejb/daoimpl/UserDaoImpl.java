@@ -1,64 +1,75 @@
 package com.java.ejb.daoimpl;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.SQLException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.java.ejb.dao.UserDao;
 import com.java.ejb.model.User;
+import com.java.ejb.util.ConnectionHelper;
 
 public class UserDaoImpl implements UserDao {
 
-    private Connection conn;
-
-    public UserDaoImpl(Connection conn) {
-        this.conn = conn;
-    }
+	Connection con;
 
     @Override
-    public void addUser(User user) throws SQLException {
-        String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
-        PreparedStatement ps = conn.prepareStatement(sql);
+    public int addUser(User user) throws SQLException, ClassNotFoundException {
+        Connection con = ConnectionHelper.getConnection();
+        String sql = "INSERT INTO users (name, email, created_at) VALUES (?, ?, ?)";
+        PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
         ps.setString(1, user.getName());
         ps.setString(2, user.getEmail());
-        ps.executeUpdate();
+        ps.setDate(3, user.getCreatedAt());
+        int rows = ps.executeUpdate();
+
+        if (rows > 0) {
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                return rs.getInt(1); // Return generated user ID
+            }
+        }
+        return 0;
     }
 
     @Override
-    public User getUserById(int id) throws SQLException {
+    public User getUserById(int id) throws SQLException, ClassNotFoundException {
+        Connection con = ConnectionHelper.getConnection();
         String sql = "SELECT * FROM users WHERE id = ?";
-        PreparedStatement ps = conn.prepareStatement(sql);
+        PreparedStatement ps = con.prepareStatement(sql);
         ps.setInt(1, id);
         ResultSet rs = ps.executeQuery();
+
         if (rs.next()) {
-            return new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"), rs.getTimestamp("created_at"));
+            return new User(
+                rs.getInt("id"),
+                rs.getString("name"),
+                rs.getString("email"),
+                rs.getDate("created_at")
+            );
         }
         return null;
     }
 
     @Override
-    public User getUserByEmail(String email) throws SQLException {
-        String sql = "SELECT * FROM users WHERE email = ?";
-        PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setString(1, email);
-        ResultSet rs = ps.executeQuery();
-        if (rs.next()) {
-            return new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"), rs.getTimestamp("created_at"));
-        }
-        return null;
-    }
+    public List<User> getAllUsers() throws SQLException, ClassNotFoundException {
+        Connection con = ConnectionHelper.getConnection();
+        Statement st = con.createStatement();
+        ResultSet rs = st.executeQuery("SELECT * FROM users");
 
-    @Override
-    public List<User> getAllUsers() throws SQLException {
-        String sql = "SELECT * FROM users";
-        PreparedStatement ps = conn.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
         List<User> users = new ArrayList<>();
         while (rs.next()) {
-            users.add(new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"), rs.getTimestamp("created_at")));
+            users.add(new User(
+                rs.getInt("id"),
+                rs.getString("name"),
+                rs.getString("email"),
+                rs.getDate("created_at")
+            ));
         }
         return users;
     }
