@@ -1,11 +1,9 @@
 package com.java.jsf.test;
 
-import java.sql.Date;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.java.ejb.model.User;
+import com.java.jsf.model.User;
 import com.java.jsf.util.HibernateUtil;
 
 public class TestMain {
@@ -43,4 +41,4 @@ public class TestMain {
     }
 		
 	
-}
+
