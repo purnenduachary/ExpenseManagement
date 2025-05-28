@@ -6,7 +6,7 @@ import com.java.ejb.model.User;
 
 public interface UserDao {
 	
-    void addUser(User user) throws SQLException;
+    void addUser(User user) throws SQLException, ClassNotFoundException;
     
     User getUserById(int id) throws SQLException, ClassNotFoundException;
     

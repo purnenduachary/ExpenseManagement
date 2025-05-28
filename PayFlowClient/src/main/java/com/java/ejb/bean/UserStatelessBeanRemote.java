@@ -9,7 +9,9 @@ import com.java.ejb.model.User;
 
 @Remote
 public interface UserStatelessBeanRemote {
-    List<User> showUsers() throws ClassNotFoundException, SQLException, SQLException;
-    User searchUser(int userId) throws ClassNotFoundException, SQLException;
-    void addUser(User user) throws ClassNotFoundException, SQLException;
+	List<User> showUsers() throws ClassNotFoundException, SQLException, SQLException;
+
+	User searchUser(int userId) throws ClassNotFoundException, SQLException;
+
+	void addUser(User user) throws ClassNotFoundException, SQLException;
 }

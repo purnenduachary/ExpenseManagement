@@ -14,7 +14,7 @@ public class TestConnection {
 	public static void main(String[] args) {
 
 		try (Connection conn = ConnectionHelper.getConnection()) {
-
+			 
 			if (conn != null && !conn.isClosed()) {
 				System.out.println("Database connection established successfully!");
 			} else {
@@ -25,22 +25,23 @@ public class TestConnection {
 			System.out.println("Error while connecting to database: " + e.getMessage());
 			e.printStackTrace();
 		}
-
+ 
+		UserDao userdao = new UserDaoImpl();
+ 
+		try {
+			userdao.getAllUsers().forEach(System.out::println);
+			;
+		} catch (ClassNotFoundException | SQLException ex) {
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+		}
+ 
 		GroupDao gpdao = new GroupDaoImpl();
-
+ 
 		try {
 			gpdao.showAllGroup().forEach(System.out::println);
 		} catch (SQLException e) {
-			UserDao userdao = new UserDaoImpl();
-
-			try {
-				userdao.getAllUsers().forEach(System.out::println);
-				;
-			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
+ 
 		}
 	}
-}
+	}

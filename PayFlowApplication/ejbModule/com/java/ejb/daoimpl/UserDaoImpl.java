@@ -34,7 +34,6 @@ public class UserDaoImpl implements UserDao {
                 return; // Return generated user ID
             }
         }
-        return 0;
     }
 
     @Override
