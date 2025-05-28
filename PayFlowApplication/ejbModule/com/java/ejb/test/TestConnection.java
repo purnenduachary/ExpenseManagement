@@ -16,7 +16,11 @@ public class TestConnection {
                 System.out.println("Failed to establish database connection.❌");
             }
         } catch (Exception e) {
+<<<<<<< HEAD
             System.out.println("❌ Error while connecting to database: " + e.getMessage());
+=======
+            System.out.println("Error while connecting to database: " + e.getMessage());
+>>>>>>> edbac1718826240683042bcc2ae6f22827452463
             e.printStackTrace();
         }
     }
