@@ -73,4 +73,10 @@ public class UserDaoImpl implements UserDao {
         }
         return users;
     }
+
+	@Override
+	public User getUserByEmail(String email) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
