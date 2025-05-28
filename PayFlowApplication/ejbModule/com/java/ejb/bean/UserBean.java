@@ -9,10 +9,6 @@ import javax.ejb.Stateless;
 @Stateless
 @Remote(UserBeanRemote.class)
 public class UserBean {
-
-    /**
-     * Default constructor. 
-     */
     public UserBean() {
         // TODO Auto-generated constructor stub
     }

@@ -38,4 +38,10 @@ public class UserBeanDao implements UserBeanRemote {
     public void addUser(User user) throws ClassNotFoundException, SQLException {
         dao.addUser(user);
     }
+
+	@Override
+	public List<User> showUser() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
