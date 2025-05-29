@@ -6,7 +6,8 @@
     <fullyQualifiedTypeName name="com.java.ejb.util.ConnectionHelper"/>
     <fullyQualifiedTypeName name="java.security.acl.Group"/>
     <fullyQualifiedTypeName name="com.java.ejb.daoimpl.GroupDaoImpl"/>
-    <fullyQualifiedTypeName name="com.java.ejb.model.User"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="com.java.ejb.model.User"/>
+    <fullyQualifiedTypeName name="com.java.ejb.daoimpl.UserDaoImpl"/>
 </qualifiedTypeNameHistroy>
