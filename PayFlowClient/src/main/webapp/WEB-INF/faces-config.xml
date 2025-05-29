@@ -11,21 +11,16 @@
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>ejbUserImpl</managed-bean-name>
+		<managed-bean-name>userejbImpl</managed-bean-name>
 		<managed-bean-class>com.java.ejb.jsf.UserEjbImpl</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 
 	<managed-bean>
 		<managed-bean-name>usercontroller</managed-bean-name>
-		<managed-bean-class>com.java.controller.UserController
-		</managed-bean-class>
+		<managed-bean-class>com.java.controller.UserController</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
-	</managed-bean>
 
-
-	<managed-bean>
-	
 		<managed-property>
 			<property-name>ejbUser</property-name>
 			<property-class>com.java.ejb.model.User</property-class>
@@ -33,11 +28,14 @@
 		</managed-property>
 
 		<managed-property>
-			<property-name>ejbUserImpl</property-name>
+			<property-name>userejbImpl</property-name>
 			<property-class>com.java.ejb.jsf.UserEjbImpl</property-class>
-			<value>#{ejbUserImpl}</value>
+			<value>#{userejbImpl}</value>
 		</managed-property>
 	</managed-bean>
+
+
+
 
 
 </faces-config>
