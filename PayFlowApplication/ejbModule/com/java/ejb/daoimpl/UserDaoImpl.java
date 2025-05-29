@@ -73,6 +73,7 @@ public class UserDaoImpl implements UserDao {
         }
         return users;
     }
+<<<<<<< HEAD
 
 	@Override
 	public User getUserByEmail(String email) throws SQLException {
@@ -80,3 +81,6 @@ public class UserDaoImpl implements UserDao {
 		return null;
 	}
 }
+=======
+}
+>>>>>>> 99bee2a7a6facd38fc6d507d4176f216179cb11f

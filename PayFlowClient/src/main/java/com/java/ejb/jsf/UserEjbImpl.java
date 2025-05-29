@@ -8,12 +8,12 @@ import javax.faces.context.FacesContext;
 import javax.naming.NamingException;
 
 import com.java.ejb.bean.RemoteStatelessHelper;
-import com.java.ejb.bean.UserStatelessBeanRemote;
+import com.java.ejb.bean.UserBeanRemote;
 import com.java.ejb.model.User;
 
-public class UserEjbStatelessImpl {
+public class UserEjbImpl {
 
-    static UserStatelessBeanRemote remote;
+    static UserBeanRemote remote;
 
     static {
         

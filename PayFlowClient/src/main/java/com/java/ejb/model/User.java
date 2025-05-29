@@ -1,11 +1,16 @@
 package com.java.ejb.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
+<<<<<<< HEAD
 public class User {
 	
-	private int id;
+=======
+public class User implements Serializable{
 
+>>>>>>> 99bee2a7a6facd38fc6d507d4176f216179cb11f
+	private int id;
 	private String name;
 	private String email;
 	private Date createdAt;
