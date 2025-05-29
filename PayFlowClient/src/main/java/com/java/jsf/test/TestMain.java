@@ -14,7 +14,7 @@ import com.java.jsf.util.HibernateUtil;
 public class TestMain {
 	public static void main(String[] args) {
 		System.out.println("Test for hibernate");
-		
+
 //		Session session = HibernateUtil.getSessionFactory().openSession();
 //        Transaction tx = null;
 //
@@ -44,34 +44,30 @@ public class TestMain {
 //        HibernateUtil.getSessionFactory().close();
 //        
 //        
-        
+
 //		GroupTest();
-		
+
 		GroupMembertest();
-        
-    }
-	
+
+	}
+
 	public static void GroupTest() {
-		
-		GroupDao gpdao=new GroupDaoImpl();
-		
-		Group group=new Group();
-		
+
+		GroupDao gpdao = new GroupDaoImpl();
+
+		Group group = new Group();
+
 		group.setName("Banglore tour");
-		
+
 		gpdao.addGroup(group);
 	}
-	
-	public static void GroupMembertest() {
-		GroupMemberDao gmdao=new GroupMemberDaoImpl();
-		
-		System.out.println("group Member are : ");
-		
-		gmdao.showAllGroup().forEach(System.out::println);
-		
-		
-	}
-    }
-		
-	
 
+	public static void GroupMembertest() {
+		GroupMemberDao gmdao = new GroupMemberDaoImpl();
+
+		System.out.println("group Member are : ");
+
+		gmdao.showAllGroup().forEach(System.out::println);
+
+	}
+}

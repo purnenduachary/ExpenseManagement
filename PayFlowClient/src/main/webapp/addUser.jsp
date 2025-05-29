@@ -44,7 +44,7 @@
 				<h:inputText id="email" value="#{ejbUser.email}"
 					styleClass="w-full px-4 py-2 border rounded-xl shadow-sm focus:ring-2 focus:ring-indigo-300 focus:outline-none" />
 				<h:message for="email" styleClass="text-red-500 text-sm mt-1" />
-			</div>
+		zx	</div>
 
 			<!-- Submit Button -->
 			<div class="text-center">
