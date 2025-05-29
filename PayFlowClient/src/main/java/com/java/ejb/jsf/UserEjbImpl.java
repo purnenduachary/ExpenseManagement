@@ -41,7 +41,7 @@ public class UserEjbImpl {
 
     public String addUserEjb(User user) throws ClassNotFoundException, SQLException {
         remote.addUser(user);
-        return "UserTable?faces-redirect=true";
+        return "ShowUser?faces-redirect=true";
     }
 
    

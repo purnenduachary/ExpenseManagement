@@ -10,9 +10,19 @@ import com.java.ejb.model.User;
 
 public class UserController {
 
-    private User ejbUser ;// ✅ declared with getter/setter
+	private User user;
+    private com.java.ejb.model.User ejbUser ;
     private UserEjbImpl userejbImpl ;
     
+    
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public User getEjbUser() {
 		return ejbUser;
 	}
@@ -32,6 +42,10 @@ public class UserController {
 	public List<User> showUserlist()
 			throws ClassNotFoundException, NamingException, SQLException {
 		return userejbImpl.showUsersEjb();
+	}
+	
+	public String addUsercon(com.java.ejb.model.User user) throws ClassNotFoundException, SQLException {
+		return userejbImpl.addUserEjb(user);
 	}
 
 }

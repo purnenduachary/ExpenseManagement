@@ -1,4 +1,4 @@
-package com.java.jsf.Controller;
+package com.java.jsf.controller;
 
 public class groupController {
 

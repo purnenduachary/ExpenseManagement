@@ -15,42 +15,26 @@ import com.java.jsf.dao.GroupDao;
 import com.java.jsf.model.Group;
 import com.java.jsf.util.HibernateUtil;
 
-
-
 public class GroupDaoImpl implements GroupDao {
-	
+
 	SessionFactory sessionFactory;
 	Session session;
 
-
-	
-		
-		
-	
-
 	@Override
 	public void addGroup(Group group) {
-		
-		sessionFactory =HibernateUtil.getSessionFactory();
-		session=sessionFactory.openSession();
-		
-		Transaction trans=session.beginTransaction();
-		
+
+		sessionFactory = HibernateUtil.getSessionFactory();
+		session = sessionFactory.openSession();
+
+		Transaction trans = session.beginTransaction();
+
 		session.save(group);
-		
+
 		trans.commit();
-		
+
 		session.close();
-		
-		
-		
+
 	}
-
-
-
-
-
-
 
 	@Override
 	public List<Group> showAllGroup() throws SQLException {

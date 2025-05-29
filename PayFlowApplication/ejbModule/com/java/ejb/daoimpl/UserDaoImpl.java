@@ -19,21 +19,21 @@ public class UserDaoImpl implements UserDao {
 	Connection con;
 
 	@Override
-	public void addUser(User user) throws SQLException, ClassNotFoundException {
+	public String addUser(User user) throws SQLException, ClassNotFoundException {
 		Connection con = ConnectionHelper.getConnection();
-		String sql = "INSERT INTO users (name, email, created_at) VALUES (?, ?, ?)";
+		String sql = "INSERT INTO users (name, email) VALUES (?, ?)";
 		PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 		ps.setString(1, user.getName());
 		ps.setString(2, user.getEmail());
-		ps.setDate(3, user.getCreatedAt());
 		int rows = ps.executeUpdate();
 
 		if (rows > 0) {
 			ResultSet rs = ps.getGeneratedKeys();
 			if (rs.next()) {
-				return; // Return generated user ID
+				return "Added"; // Return generated user ID
 			}
 		}
+		return sql;
 	}
 
 	@Override
@@ -56,37 +56,17 @@ public class UserDaoImpl implements UserDao {
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery("SELECT * FROM users");
 
-<<<<<<< HEAD
 		List<User> users = new ArrayList<>();
 		while (rs.next()) {
 			users.add(new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"), rs.getDate("created_at")));
 		}
 		return users;
 	}
-=======
-        List<User> users = new ArrayList<>();
-        while (rs.next()) {
-            users.add(new User(
-                rs.getInt("id"),
-                rs.getString("name"),
-                rs.getString("email"),
-                rs.getDate("created_at")
-            ));
-        }
-        return users;
-    }
-<<<<<<< HEAD
->>>>>>> 5f4838e6086703672f7fa7d5b3e73232216252be
 
-	@Override
-	public User getUserByEmail(String email) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+        
+
+
+	
 }
-<<<<<<< HEAD
-=======
-=======
-}
->>>>>>> 99bee2a7a6facd38fc6d507d4176f216179cb11f
->>>>>>> 5f4838e6086703672f7fa7d5b3e73232216252be
+

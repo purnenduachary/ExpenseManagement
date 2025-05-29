@@ -14,6 +14,6 @@ public interface UserBeanRemote {
 
 	User searchUser(int userId) throws ClassNotFoundException, SQLException;
 
-	void addUser(User user) throws ClassNotFoundException, SQLException;
+	String addUser(User user) throws ClassNotFoundException, SQLException;
 
 }

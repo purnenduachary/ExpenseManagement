@@ -7,18 +7,32 @@ import com.java.ejb.dao.GroupDao;
 import com.java.ejb.dao.UserDao;
 import com.java.ejb.daoimpl.GroupDaoImpl;
 import com.java.ejb.daoimpl.UserDaoImpl;
+import com.java.ejb.model.User;
 import com.java.ejb.util.ConnectionHelper;
 
 public class TestConnection {
+	
+	
+	public static void addUser() {
+		
+		User user = new User();
+		user.setName("Henrick");
+		user.setEmail("Henrick@gmail.com");
+		
+		UserDao userdao = new UserDaoImpl();
+		try {
+			userdao.addUser(user);
+			System.out.println("User Added");
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public static void main(String[] args) {
 
 		try (Connection conn = ConnectionHelper.getConnection()) {
-<<<<<<< HEAD
-			 
-=======
 
->>>>>>> 5f4838e6086703672f7fa7d5b3e73232216252be
 			if (conn != null && !conn.isClosed()) {
 				System.out.println("Database connection established successfully!");
 			} else {
@@ -29,42 +43,26 @@ public class TestConnection {
 			System.out.println("Error while connecting to database: " + e.getMessage());
 			e.printStackTrace();
 		}
-<<<<<<< HEAD
- 
-		UserDao userdao = new UserDaoImpl();
- 
-=======
 
-		UserDao userdao = new UserDaoImpl();
-
->>>>>>> 5f4838e6086703672f7fa7d5b3e73232216252be
-		try {
-			userdao.getAllUsers().forEach(System.out::println);
-			;
-		} catch (ClassNotFoundException | SQLException ex) {
-			// TODO Auto-generated catch block
-			ex.printStackTrace();
-		}
-<<<<<<< HEAD
- 
-		GroupDao gpdao = new GroupDaoImpl();
- 
-		try {
-			gpdao.showAllGroup().forEach(System.out::println);
-		} catch (SQLException e) {
- 
-		}
-	}
-	}
-=======
-
-		GroupDao gpdao = new GroupDaoImpl();
-
-		try {
-			gpdao.showAllGroup().forEach(System.out::println);
-		} catch (SQLException e) {
-
-		}
+//		UserDao userdao = new UserDaoImpl();
+//
+//		try {
+//			userdao.getAllUsers().forEach(System.out::println);
+//			
+//		} catch (ClassNotFoundException | SQLException ex) {
+//			// TODO Auto-generated catch block
+//			ex.printStackTrace();
+//		}
+//
+//		GroupDao gpdao = new GroupDaoImpl();
+//
+//		try {
+//			gpdao.showAllGroup().forEach(System.out::println);
+//		} catch (SQLException e) {
+//
+//		}
+		
+		addUser();
+		
 	}
 }
->>>>>>> 5f4838e6086703672f7fa7d5b3e73232216252be

@@ -35,8 +35,8 @@ public class UserBeanDao implements UserBeanRemote {
     }
 
     @Override
-    public void addUser(User user) throws ClassNotFoundException, SQLException {
-        dao.addUser(user);
+    public String addUser(User user) throws ClassNotFoundException, SQLException {
+        return dao.addUser(user);
     }
 
 	

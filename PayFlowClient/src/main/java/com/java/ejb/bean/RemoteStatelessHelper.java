@@ -33,17 +33,17 @@ public class RemoteStatelessHelper {
             "ejb:" + appName + "/" + moduleName + "/" + distinctName + "/" + beanName + "!" + viewClassName
         );
     }
-    public static UserStatelessBeanRemote lookupRemoteStatelessGroup() throws NamingException {
-        Context ctx = createInitialContext();
-
-        final String appName = ""; // EAR name (empty if not using EAR)
-        final String moduleName = "PayFlowApplication"; // your EJB JAR module name
-        final String distinctName = "";
-        final String beanName = "GroupBean"; // the bean class name
-        final String viewClassName = UserStatelessBeanRemote.class.getName(); // remote interface
-
-        return (UserStatelessBeanRemote) ctx.lookup(
-            "ejb:" + appName + "/" + moduleName + "/" + distinctName + "/" + beanName + "!" + viewClassName
-        );
-    }
+//    public static UserStatelessBeanRemote lookupRemoteStatelessGroup() throws NamingException {
+//        Context ctx = createInitialContext();
+//
+//        final String appName = ""; // EAR name (empty if not using EAR)
+//        final String moduleName = "PayFlowApplication"; // your EJB JAR module name
+//        final String distinctName = "";
+//        final String beanName = "GroupBean"; // the bean class name
+//        final String viewClassName = UserStatelessBeanRemote.class.getName(); // remote interface
+//
+//        return (UserStatelessBeanRemote) ctx.lookup(
+//            "ejb:" + appName + "/" + moduleName + "/" + distinctName + "/" + beanName + "!" + viewClassName
+//        );
+//    }
 }

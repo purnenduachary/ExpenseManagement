@@ -1,7 +1,5 @@
 package com.java.jsf.daoImpl;
 
-import java.awt.print.Book;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -13,17 +11,14 @@ import com.java.ejb.model.User;
 import com.java.jsf.dao.UserDao;
 import com.java.jsf.util.HibernateUtil;
 
-public class UseDaoImpl implements UserDao{
-	
+public class UseDaoImpl implements UserDao {
+
 	SessionFactory sessionFactory;
 	Session session;
 
-
 	@Override
 	public List<User> showAllUserH() {
-		
-		
-		
+
 		sessionFactory = HibernateUtil.getSessionFactory();
 
 		session = sessionFactory.openSession();
@@ -38,8 +33,7 @@ public class UseDaoImpl implements UserDao{
 		session.close();
 
 		return userList;
-		
-		
+
 	}
 
 }
