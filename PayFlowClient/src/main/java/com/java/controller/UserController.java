@@ -1,0 +1,20 @@
+package com.java.controller;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.naming.NamingException;
+
+import com.java.ejb.jsf.UserEjbImpl;
+import com.java.ejb.model.User;
+
+public class UserController {
+	
+	public com.java.ejb.model.User ejbUser;
+	public UserEjbImpl userejbImpl;
+	
+	public List<User> showUserlist(com.java.ejb.model.User user) throws ClassNotFoundException, NamingException, SQLException{
+		return userejbImpl.showUsersEjb();
+	}
+
+}
