@@ -39,9 +39,5 @@ public class UserBeanDao implements UserBeanRemote {
         dao.addUser(user);
     }
 
-	@Override
-	public List<User> showUser() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
