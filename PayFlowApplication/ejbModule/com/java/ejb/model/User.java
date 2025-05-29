@@ -1,9 +1,10 @@
 
 package com.java.ejb.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class User {
+public class User implements Serializable{
 
 	private int id;
 

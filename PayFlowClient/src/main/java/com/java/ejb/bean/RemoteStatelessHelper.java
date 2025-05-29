@@ -19,16 +19,16 @@ public class RemoteStatelessHelper {
         return new InitialContext(jndiProperties);
     }
 
-    public static UserStatelessBeanRemote lookupRemoteStatelessUser() throws NamingException {
+    public static UserBeanRemote lookupRemoteStatelessUser() throws NamingException {
         Context ctx = createInitialContext();
 
         final String appName = ""; // EAR name (empty if not using EAR)
         final String moduleName = "PayFlowApplication"; // your EJB JAR module name
         final String distinctName = "";
         final String beanName = "UserBeanDao"; // the bean class name
-        final String viewClassName = UserStatelessBeanRemote.class.getName(); // remote interface
+        final String viewClassName = UserBeanRemote.class.getName(); // remote interface
 
-        return (UserStatelessBeanRemote) ctx.lookup(
+        return (UserBeanRemote) ctx.lookup(
             "ejb:" + appName + "/" + moduleName + "/" + distinctName + "/" + beanName + "!" + viewClassName
         );
     }

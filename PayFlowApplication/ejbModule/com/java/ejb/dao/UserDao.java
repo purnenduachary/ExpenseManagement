@@ -19,4 +19,9 @@ public interface UserDao {
 //	User getUserById(int id) throws ClassNotFoundException, SQLException;
 
 
+<<<<<<< HEAD
 }
+=======
+	List<User> getAllUsers() throws ClassNotFoundException, SQLException;
+}
+>>>>>>> 99bee2a7a6facd38fc6d507d4176f216179cb11f
