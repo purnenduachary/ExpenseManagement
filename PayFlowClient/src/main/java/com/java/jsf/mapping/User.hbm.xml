@@ -4,8 +4,10 @@
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.java.ejb.model.User" table="users">
+    <class name="com.java.jsf.model.User" table="users">
     
+    
+
         <id name="id" column="id" type="int">
             <generator class="increment"/>
         </id>

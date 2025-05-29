@@ -1,4 +1,4 @@
-package com.java.ejb.model;
+package com.java.jsf.model;
 
 import java.sql.Date;
 
@@ -56,7 +56,6 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", createdAt=" + createdAt + "]";
 	}
-
 
 
 }
