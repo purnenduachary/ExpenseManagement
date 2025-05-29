@@ -1,0 +1,20 @@
+package com.java.abc;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class ytre
+ */
+@Stateless
+@LocalBean
+public class ytre {
+
+    /**
+     * Default constructor. 
+     */
+    public ytre() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

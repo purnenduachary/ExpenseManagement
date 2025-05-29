@@ -1,0 +1,44 @@
+package com.java.ejb.bean;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.ejb.Remote;
+import javax.ejb.Stateless;
+
+import com.java.ejb.dao.UserDAO;
+import com.java.ejb.daoimpl.UserDAOImpl;
+import com.java.ejb.model.User;
+
+/**
+ * Session Bean implementation class UserBean
+ */
+@Stateless
+@Remote(UserBeanRemote.class)
+public class UserBean implements UserBeanRemote {
+
+    static UserDAO dao;
+
+    static {
+        dao = new UserDAOImpl(null);
+    }
+
+    public UserBean() {
+        // Default constructor
+    }
+
+    @Override
+    public List<User> showUsers() throws ClassNotFoundException, SQLException {
+        return dao.getAllUsers();
+    }
+
+    @Override
+    public User searchUser(int userId) throws ClassNotFoundException, SQLException {
+        return dao.getUserById(userId);
+    }
+
+    @Override
+    public void addUser(User user) throws ClassNotFoundException, SQLException {
+        dao.addUser(user);
+    }
+}

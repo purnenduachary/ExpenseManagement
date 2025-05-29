@@ -1,0 +1,14 @@
+package com.java.ejb.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.java.ejb.model.User;
+
+public interface UserDAO {
+    void addUser(User user) throws SQLException;
+    User getUserById(int id);
+    User getUserByEmail(String email);
+    List<User> getAllUsers();
+}
+

@@ -1,0 +1,8 @@
+package com.java.controller;
+
+public class UserController {
+	
+	public com.java.ejb.model.User ejbUser;
+	public 
+
+}

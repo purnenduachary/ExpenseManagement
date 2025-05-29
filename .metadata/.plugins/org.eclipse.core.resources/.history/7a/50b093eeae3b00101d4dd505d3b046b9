@@ -1,0 +1,5 @@
+package com.java.ejb.bean;
+
+public class RemoteUserHelper {
+
+}

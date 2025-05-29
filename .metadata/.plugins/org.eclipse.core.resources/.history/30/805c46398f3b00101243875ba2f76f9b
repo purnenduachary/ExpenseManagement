@@ -1,0 +1,8 @@
+package com.java.ejb.dao;
+
+public interface UserDAO {
+    void addUser(User user);
+    User getUserById(int id);
+    User getUserByEmail(String email);
+    List<User> getAllUsers();
+}

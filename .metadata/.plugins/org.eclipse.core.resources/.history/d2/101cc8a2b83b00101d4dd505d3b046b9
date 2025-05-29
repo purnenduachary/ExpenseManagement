@@ -1,0 +1,68 @@
+package com.java.ejb.jsf;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
+import javax.faces.context.FacesContext;
+import javax.naming.NamingException;
+
+import com.java.ejb.bean.UserStatelessBeanRemote;
+import com.java.ejb.model.User;
+
+static EmployStatelessBeanRemote remote;
+static {
+	try {
+		remote = RemoteStatelessHelper.lookupRemoteStatelessEmploy();
+	} catch (NamingException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+
+
+
+
+public class UserEjbStatelessImpl {
+
+    static UserStatelessBeanRemote remote;
+
+    static {
+        
+            remote = RemoteStatelessHelper.lookupRemoteStatelessUser();
+        }
+
+    public List<User> showUsersEjb() throws NamingException, ClassNotFoundException, SQLException {
+        return remote.getAllUsers();
+    }
+
+    public String searchUserEjb(int id) throws ClassNotFoundException, SQLException {
+        Map<String, Object> sessionMap = 
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+
+        User userFound = remote.getUserById(id);
+        sessionMap.put("userFound", userFound);
+
+        return "updateUser?faces-redirect=true";
+    }
+
+    public String addUserEjb(User user) throws ClassNotFoundException, SQLException {
+        remote.addUser(user);
+        return "UserTable?faces-redirect=true";
+    }
+
+    public String updateUserEjb() throws ClassNotFoundException, SQLException {
+        Map<String, Object> sessionMap =
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap();
+
+        User userUpdated = (User) sessionMap.get("userFound");
+        remote.updateUser(userUpdated);
+
+        return "UserTable?faces-redirect=true";
+    }
+
+    public String deleteUserEjb(int id) throws ClassNotFoundException, SQLException {
+        remote.deleteUser(id);
+        return "UserTable?faces-redirect=true";
+    }
+}

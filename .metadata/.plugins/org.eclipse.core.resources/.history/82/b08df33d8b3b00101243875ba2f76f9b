@@ -1,0 +1,18 @@
+package com.java.ejb.bean;
+
+import java.util.List;
+
+import javax.ejb.Remote;
+
+import com.java.ejb.model.User;
+
+import java.sql.SQLException;
+
+
+@Remote
+public interface UserBeanRemote {
+    List<User> showUsers() throws ClassNotFoundException, SQLException;
+    User searchUser(int userId) throws ClassNotFoundException, SQLException;
+    void addUser(User user) throws ClassNotFoundException, SQLException;
+}
+
