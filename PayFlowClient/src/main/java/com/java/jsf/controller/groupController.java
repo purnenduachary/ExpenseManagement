@@ -1,7 +1,5 @@
-package com.java.jsf.controller;
+package com.java.jsf.Controller;
 
 public class groupController {
 
-	
-	
 }

@@ -4,7 +4,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.java.jsf.dao.GroupDao;
+import com.java.jsf.dao.GroupMemberDao;
 import com.java.jsf.daoImpl.GroupDaoImpl;
+import com.java.jsf.daoImpl.GroupMemberDaoImpl;
 import com.java.jsf.model.Group;
 import com.java.jsf.model.User;
 import com.java.jsf.util.HibernateUtil;
@@ -43,7 +45,9 @@ public class TestMain {
 //        
 //        
         
-		GroupTest();
+//		GroupTest();
+		
+		GroupMembertest();
         
     }
 	
@@ -53,9 +57,19 @@ public class TestMain {
 		
 		Group group=new Group();
 		
-		group.setName("BARRA PARTY");
+		group.setName("Banglore tour");
 		
 		gpdao.addGroup(group);
+	}
+	
+	public static void GroupMembertest() {
+		GroupMemberDao gmdao=new GroupMemberDaoImpl();
+		
+		System.out.println("group Member are : ");
+		
+		gmdao.showAllGroup().forEach(System.out::println);
+		
+		
 	}
     }
 		
