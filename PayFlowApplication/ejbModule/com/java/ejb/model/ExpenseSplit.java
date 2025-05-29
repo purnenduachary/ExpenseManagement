@@ -1,29 +1,50 @@
 package com.java.ejb.model;
 
 public class ExpenseSplit {
-    private int id;
-    private Expense expense;
-    private User user;
-    private double amountOwed;
+	private int id;
+	private Expense expense;
+	private User user;
+	private double amountOwed;
 
-    public ExpenseSplit() {}
+	public ExpenseSplit() {
+	}
 
-    public ExpenseSplit(int id, Expense expense, User user, double amountOwed) {
-        this.id = id;
-        this.expense = expense;
-        this.user = user;
-        this.amountOwed = amountOwed;
-    }
+	public ExpenseSplit(int id, Expense expense, User user, double amountOwed) {
+		this.id = id;
+		this.expense = expense;
+		this.user = user;
+		this.amountOwed = amountOwed;
+	}
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+	public int getId() {
+		return id;
+	}
 
-    public Expense getExpense() { return expense; }
-    public void setExpense(Expense expense) { this.expense = expense; }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public User getUser() { return user; }
-    public void setUser(User user) { this.user = user; }
+	public Expense getExpense() {
+		return expense;
+	}
 
-    public double getAmountOwed() { return amountOwed; }
-    public void setAmountOwed(double amountOwed) { this.amountOwed = amountOwed; }
+	public void setExpense(Expense expense) {
+		this.expense = expense;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public double getAmountOwed() {
+		return amountOwed;
+	}
+
+	public void setAmountOwed(double amountOwed) {
+		this.amountOwed = amountOwed;
+	}
 }

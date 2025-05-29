@@ -56,12 +56,27 @@ public class UserDaoImpl implements UserDao {
 		Statement st = con.createStatement();
 		ResultSet rs = st.executeQuery("SELECT * FROM users");
 
+<<<<<<< HEAD
 		List<User> users = new ArrayList<>();
 		while (rs.next()) {
 			users.add(new User(rs.getInt("id"), rs.getString("name"), rs.getString("email"), rs.getDate("created_at")));
 		}
 		return users;
 	}
+=======
+        List<User> users = new ArrayList<>();
+        while (rs.next()) {
+            users.add(new User(
+                rs.getInt("id"),
+                rs.getString("name"),
+                rs.getString("email"),
+                rs.getDate("created_at")
+            ));
+        }
+        return users;
+    }
+<<<<<<< HEAD
+>>>>>>> 5f4838e6086703672f7fa7d5b3e73232216252be
 
 	@Override
 	public User getUserByEmail(String email) throws SQLException {
@@ -69,3 +84,9 @@ public class UserDaoImpl implements UserDao {
 		return null;
 	}
 }
+<<<<<<< HEAD
+=======
+=======
+}
+>>>>>>> 99bee2a7a6facd38fc6d507d4176f216179cb11f
+>>>>>>> 5f4838e6086703672f7fa7d5b3e73232216252be
